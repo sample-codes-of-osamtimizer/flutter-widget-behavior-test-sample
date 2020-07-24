@@ -8,8 +8,7 @@ import 'package:behavior_test/main.dart';
 
 void main() {
   setUpAll(() {});
-  testWidgets("fetch mails after MailList widget initialization",
-      (WidgetTester tester) async {
+  testWidgets("initialization", (WidgetTester tester) async {
     final store = MailStore();
     expect(store.mails.length, 0);
     await tester.pumpWidget(
