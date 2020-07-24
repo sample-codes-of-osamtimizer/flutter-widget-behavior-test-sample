@@ -1,7 +1,19 @@
+import 'package:behavior_test/mail_list.dart';
+import 'package:behavior_test/mail_store.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(Home());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => MailStore(),
+        )
+      ],
+      child: Home(),
+    ),
+  );
 }
 
 class Home extends StatelessWidget {
@@ -15,7 +27,7 @@ class Home extends StatelessWidget {
           title: Text("Behavior Test"),
         ),
         body: Center(
-          child: Text("hello world"),
+          child: MailList(),
         ),
       ),
     );
