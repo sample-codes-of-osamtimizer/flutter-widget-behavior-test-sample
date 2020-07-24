@@ -1,3 +1,4 @@
+import 'package:behavior_test/mail_detail.dart';
 import 'package:behavior_test/mail_store.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +31,12 @@ class _MailListState extends State<MailList> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             subtitle: Text("from: ${mails[index].from}"),
+            onTap: () async {
+              Navigator.of(context).pushNamed(
+                MailDetail.routeName,
+                arguments: mails[index],
+              );
+            },
           );
         },
         itemCount: mails.length,
