@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Behavior Test"),
+          title: Text("Awesome MailBox"),
         ),
         body: Center(
           child: MailList(),

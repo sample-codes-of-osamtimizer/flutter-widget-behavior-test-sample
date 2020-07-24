@@ -25,8 +25,11 @@ class _MailListState extends State<MailList> {
       child: ListView.builder(
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(mails[index].title),
-            subtitle: Text(mails[index].from),
+            title: Text(
+              mails[index].title,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            subtitle: Text("from: ${mails[index].from}"),
           );
         },
         itemCount: mails.length,
